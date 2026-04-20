@@ -1,8 +1,7 @@
 # ASP.NET Boilerplate
 
-[![Build Status](https://github.com/aspnetboilerplate/aspnetboilerplate/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/aspnetboilerplate/aspnetboilerplate/actions/workflows/build-and-test.yml)
+[![Build Status](https://github.com/yopichy/aspnetboilerplate/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/yopichy/aspnetboilerplate/actions/workflows/build-and-test.yml)
 [![NuGet](https://img.shields.io/nuget/v/AbpLts.svg?style=flat-square)](https://www.nuget.org/packages/AbpLts)
-[![MyGet (with prereleases)](https://img.shields.io/myget/abp-nightly/vpre/Abp.svg?style=flat-square)](https://aspnetboilerplate.com/Pages/Documents/Nightly-Builds)
 [![NuGet Download](https://img.shields.io/nuget/dt/AbpLts.svg?style=flat-square)](https://www.nuget.org/packages/AbpLts)
 
 > ### Long Term Support Update
@@ -48,29 +47,29 @@ ASP.NET Boilerplate is distributed as NuGet packages.
 
 |Package|Status|
 |:------|:-----:|
-|Abp|[![NuGet version](https://badge.fury.io/nu/Abp.svg)](https://badge.fury.io/nu/Abp)|
-|Abp.AspNetCore|[![NuGet version](https://badge.fury.io/nu/Abp.AspNetCore.svg)](https://badge.fury.io/nu/Abp.AspNetCore)|
-|Abp.Web.Common|[![NuGet version](https://badge.fury.io/nu/Abp.Web.Common.svg)](https://badge.fury.io/nu/Abp.Web.Common)|
-|Abp.Web.Resources|[![NuGet version](https://badge.fury.io/nu/Abp.Web.Resources.svg)](https://badge.fury.io/nu/Abp.Web.Resources)|
-|Abp.EntityFramework.Common|[![NuGet version](https://badge.fury.io/nu/Abp.EntityFramework.Common.svg)](https://badge.fury.io/nu/Abp.EntityFramework.Common)|
-|Abp.EntityFramework|[![NuGet version](https://badge.fury.io/nu/Abp.EntityFramework.svg)](https://badge.fury.io/nu/Abp.EntityFramework)|
-|Abp.EntityFrameworkCore|[![NuGet version](https://badge.fury.io/nu/Abp.EntityFrameworkCore.svg)](https://badge.fury.io/nu/Abp.EntityFrameworkCore)|
-|Abp.NHibernate|[![NuGet version](https://badge.fury.io/nu/Abp.NHibernate.svg)](https://badge.fury.io/nu/Abp.NHibernate)|
-|Abp.Dapper|[![NuGet version](https://badge.fury.io/nu/Abp.Dapper.svg)](https://badge.fury.io/nu/Abp.Dapper)|
-|Abp.FluentMigrator|[![NuGet version](https://badge.fury.io/nu/Abp.FluentMigrator.svg)](https://badge.fury.io/nu/Abp.FluentMigrator)|
-|Abp.AspNetCore|[![NuGet version](https://badge.fury.io/nu/Abp.AspNetCore.svg)](https://badge.fury.io/nu/Abp.AspNetCore)|
-|Abp.AspNetCore.SignalR|[![NuGet version](https://badge.fury.io/nu/Abp.AspNetCore.SignalR.svg)](https://badge.fury.io/nu/Abp.AspNetCore.SignalR)|
-|Abp.AutoMapper|[![NuGet version](https://badge.fury.io/nu/Abp.AutoMapper.svg)](https://badge.fury.io/nu/Abp.AutoMapper)|
-|Abp.HangFire|[![NuGet version](https://badge.fury.io/nu/Abp.HangFire.svg)](https://badge.fury.io/nu/Abp.HangFire)|
-|Abp.HangFire.AspNetCore|[![NuGet version](https://badge.fury.io/nu/Abp.HangFire.AspNetCore.svg)](https://badge.fury.io/nu/Abp.HangFire.AspNetCore)|
-|Abp.Castle.Log4Net|[![NuGet version](https://badge.fury.io/nu/Abp.Castle.Log4Net.svg)](https://badge.fury.io/nu/Abp.Castle.Log4Net)|
-|Abp.RedisCache|[![NuGet version](https://badge.fury.io/nu/Abp.RedisCache.svg)](https://badge.fury.io/nu/Abp.RedisCache)|
-|Abp.RedisCache.ProtoBuf|[![NuGet version](https://badge.fury.io/nu/Abp.RedisCache.ProtoBuf.svg)](https://badge.fury.io/nu/Abp.RedisCache.ProtoBuf)|
-|Abp.MailKit|[![NuGet version](https://badge.fury.io/nu/Abp.MailKit.svg)](https://badge.fury.io/nu/Abp.MailKit)|
-|Abp.Quartz|[![NuGet version](https://badge.fury.io/nu/Abp.Quartz.svg)](https://badge.fury.io/nu/Abp.Quartz)|
-|Abp.TestBase|[![NuGet version](https://badge.fury.io/nu/Abp.TestBase.svg)](https://badge.fury.io/nu/Abp.TestBase)|
-|Abp.AspNetCore.TestBase|[![NuGet version](https://badge.fury.io/nu/Abp.AspNetCore.TestBase.svg)](https://badge.fury.io/nu/Abp.AspNetCore.TestBase)|
-|Abp.AspNetCore.OpenIddict|[![NuGet version](https://badge.fury.io/nu/Abp.AspNetCore.OpenIddict.svg)](https://badge.fury.io/nu/Abp.AspNetCore.OpenIddict)|
+|AbpLts|[![NuGet version](https://badge.fury.io/nu/AbpLts.svg)](https://badge.fury.io/nu/AbpLts)|
+|AbpLts.AspNetCore|[![NuGet version](https://badge.fury.io/nu/AbpLts.AspNetCore.svg)](https://badge.fury.io/nu/AbpLts.AspNetCore)|
+|AbpLts.Web.Common|[![NuGet version](https://badge.fury.io/nu/AbpLts.Web.Common.svg)](https://badge.fury.io/nu/AbpLts.Web.Common)|
+|AbpLts.Web.Resources|[![NuGet version](https://badge.fury.io/nu/AbpLts.Web.Resources.svg)](https://badge.fury.io/nu/AbpLts.Web.Resources)|
+|AbpLts.EntityFramework.Common|[![NuGet version](https://badge.fury.io/nu/AbpLts.EntityFramework.Common.svg)](https://badge.fury.io/nu/AbpLts.EntityFramework.Common)|
+|AbpLts.EntityFramework|[![NuGet version](https://badge.fury.io/nu/AbpLts.EntityFramework.svg)](https://badge.fury.io/nu/AbpLts.EntityFramework)|
+|AbpLts.EntityFrameworkCore|[![NuGet version](https://badge.fury.io/nu/AbpLts.EntityFrameworkCore.svg)](https://badge.fury.io/nu/AbpLts.EntityFrameworkCore)|
+|AbpLts.NHibernate|[![NuGet version](https://badge.fury.io/nu/AbpLts.NHibernate.svg)](https://badge.fury.io/nu/AbpLts.NHibernate)|
+|AbpLts.Dapper|[![NuGet version](https://badge.fury.io/nu/AbpLts.Dapper.svg)](https://badge.fury.io/nu/AbpLts.Dapper)|
+|AbpLts.FluentMigrator|[![NuGet version](https://badge.fury.io/nu/AbpLts.FluentMigrator.svg)](https://badge.fury.io/nu/AbpLts.FluentMigrator)|
+|AbpLts.AspNetCore|[![NuGet version](https://badge.fury.io/nu/AbpLts.AspNetCore.svg)](https://badge.fury.io/nu/AbpLts.AspNetCore)|
+|AbpLts.AspNetCore.SignalR|[![NuGet version](https://badge.fury.io/nu/AbpLts.AspNetCore.SignalR.svg)](https://badge.fury.io/nu/AbpLts.AspNetCore.SignalR)|
+|AbpLts.AutoMapper|[![NuGet version](https://badge.fury.io/nu/AbpLts.AutoMapper.svg)](https://badge.fury.io/nu/AbpLts.AutoMapper)|
+|AbpLts.HangFire|[![NuGet version](https://badge.fury.io/nu/AbpLts.HangFire.svg)](https://badge.fury.io/nu/AbpLts.HangFire)|
+|AbpLts.HangFire.AspNetCore|[![NuGet version](https://badge.fury.io/nu/AbpLts.HangFire.AspNetCore.svg)](https://badge.fury.io/nu/AbpLts.HangFire.AspNetCore)|
+|AbpLts.Castle.Log4Net|[![NuGet version](https://badge.fury.io/nu/AbpLts.Castle.Log4Net.svg)](https://badge.fury.io/nu/AbpLts.Castle.Log4Net)|
+|AbpLts.RedisCache|[![NuGet version](https://badge.fury.io/nu/AbpLts.RedisCache.svg)](https://badge.fury.io/nu/AbpLts.RedisCache)|
+|AbpLts.RedisCache.ProtoBuf|[![NuGet version](https://badge.fury.io/nu/AbpLts.RedisCache.ProtoBuf.svg)](https://badge.fury.io/nu/AbpLts.RedisCache.ProtoBuf)|
+|AbpLts.MailKit|[![NuGet version](https://badge.fury.io/nu/AbpLts.MailKit.svg)](https://badge.fury.io/nu/AbpLts.MailKit)|
+|AbpLts.Quartz|[![NuGet version](https://badge.fury.io/nu/AbpLts.Quartz.svg)](https://badge.fury.io/nu/AbpLts.Quartz)|
+|AbpLts.TestBase|[![NuGet version](https://badge.fury.io/nu/AbpLts.TestBase.svg)](https://badge.fury.io/nu/AbpLts.TestBase)|
+|AbpLts.AspNetCore.TestBase|[![NuGet version](https://badge.fury.io/nu/AbpLts.AspNetCore.TestBase.svg)](https://badge.fury.io/nu/AbpLts.AspNetCore.TestBase)|
+|AbpLts.AspNetCore.OpenIddict|[![NuGet version](https://badge.fury.io/nu/AbpLts.AspNetCore.OpenIddict.svg)](https://badge.fury.io/nu/AbpLts.AspNetCore.OpenIddict)|
 
 # Module Zero
 
@@ -105,8 +104,8 @@ Packages integrated into <a href="https://docs.microsoft.com/en-us/aspnet/identi
 
 |Package|Status|
 |:------|:-----:|
-|Abp.ZeroCore|[![NuGet version](https://badge.fury.io/nu/Abp.ZeroCore.svg)](https://badge.fury.io/nu/Abp.ZeroCore)|
-|Abp.ZeroCore.EntityFrameworkCore|[![NuGet version](https://badge.fury.io/nu/Abp.ZeroCore.EntityFrameworkCore.svg)](https://badge.fury.io/nu/Abp.ZeroCore.EntityFrameworkCore)|
+|AbpLts.ZeroCore|[![NuGet version](https://badge.fury.io/nu/AbpLts.ZeroCore.svg)](https://badge.fury.io/nu/AbpLts.ZeroCore)|
+|AbpLts.ZeroCore.EntityFrameworkCore|[![NuGet version](https://badge.fury.io/nu/AbpLts.ZeroCore.EntityFrameworkCore.svg)](https://badge.fury.io/nu/AbpLts.ZeroCore.EntityFrameworkCore)|
 
 ### Shared Packages
 
@@ -114,8 +113,8 @@ Shared packages between the Abp.ZeroCore.\* and Abp.Zero.\* packages.
 
 |Package|Status|
 |:------|:-----:|
-|Abp.Zero.Common|[![NuGet version](https://badge.fury.io/nu/Abp.Zero.Common.svg)](https://badge.fury.io/nu/Abp.Zero.Common)|
-|Abp.Zero.Ldap|[![NuGet version](https://badge.fury.io/nu/Abp.Zero.Ldap.svg)](https://badge.fury.io/nu/Abp.Zero.Ldap)|
+|AbpLts.Zero.Common|[![NuGet version](https://badge.fury.io/nu/AbpLts.Zero.Common.svg)](https://badge.fury.io/nu/AbpLts.Zero.Common)|
+|AbpLts.Zero.Ldap|[![NuGet version](https://badge.fury.io/nu/AbpLts.Zero.Ldap.svg)](https://badge.fury.io/nu/AbpLts.Zero.Ldap)|
 
 ## Startup Templates
 
