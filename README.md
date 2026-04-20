@@ -1,9 +1,9 @@
 # ASP.NET Boilerplate
 
 [![Build Status](https://github.com/aspnetboilerplate/aspnetboilerplate/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/aspnetboilerplate/aspnetboilerplate/actions/workflows/build-and-test.yml)
-[![NuGet](https://img.shields.io/nuget/v/Abp.svg?style=flat-square)](https://www.nuget.org/packages/Abp)
+[![NuGet](https://img.shields.io/nuget/v/AbpLts.svg?style=flat-square)](https://www.nuget.org/packages/AbpLts)
 [![MyGet (with prereleases)](https://img.shields.io/myget/abp-nightly/vpre/Abp.svg?style=flat-square)](https://aspnetboilerplate.com/Pages/Documents/Nightly-Builds)
-[![NuGet Download](https://img.shields.io/nuget/dt/Abp.svg?style=flat-square)](https://www.nuget.org/packages/Abp)
+[![NuGet Download](https://img.shields.io/nuget/dt/AbpLts.svg?style=flat-square)](https://www.nuget.org/packages/AbpLts)
 
 > ### Long Term Support Update
 > ASP.NET Boilerplate is no longer receiving new feature development, but it is maintained in an LTS mode for security patches only. See the original announcement at [read the end of life announcement](https://aspnetboilerplate.com/endofsupport?utm_source=referral&utm_medium=github&utm_campaign=github_zboilerplate_announcement_redirection).
