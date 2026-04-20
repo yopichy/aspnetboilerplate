@@ -7,14 +7,14 @@
     <TargetFramework>net10.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Abp.EntityFramework.Common</AssemblyName>
-    <PackageId>Abp.EntityFramework.Common</PackageId>
+    <PackageId>AbpLts.EntityFramework.Common</PackageId>
     <PackageTags>asp.net;asp.net mvc;boilerplate;application framework;web framework;framework;domain driven design;EntityFramework;ORM</PackageTags>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <RootNamespace>Abp.EntityFramework</RootNamespace>
-    <Description>Abp.EntityFramework.Common</Description>
+    <Description>AbpLts.EntityFramework.Common</Description>
   </PropertyGroup>
 
   <ItemGroup>

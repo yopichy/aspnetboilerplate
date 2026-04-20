@@ -1,6 +1,6 @@
 # Paths
-$packFolder = (Get-Item -Path "./" -Verbose).FullName
-$slnPath = Join-Path $packFolder "../"
+$packFolder = (Get-Item -Path $PSScriptRoot -Verbose).FullName
+$slnPath = Join-Path $packFolder ".."
 $srcPath = Join-Path $slnPath "src"
 
 # List of projects
@@ -62,12 +62,10 @@ foreach($project in $projects) {
     & dotnet msbuild /p:Configuration=Release /t:pack /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg
 
     # Copy nuget package
-    $projectPackPath = Join-Path $projectFolder ("/bin/Release/" + $project + ".*.nupkg")
-    Move-Item $projectPackPath $packFolder
+    Get-ChildItem (Join-Path $projectFolder "bin/Release") -Filter "*.nupkg" -File | Move-Item -Destination $packFolder
 
-	# Copy symbol package
-    $projectPackPath = Join-Path $projectFolder ("/bin/Release/" + $project + ".*.snupkg")
-    Move-Item $projectPackPath $packFolder
+    # Copy symbol package
+    Get-ChildItem (Join-Path $projectFolder "bin/Release") -Filter "*.snupkg" -File | Move-Item -Destination $packFolder
 }
 
 # Go back to the pack folder

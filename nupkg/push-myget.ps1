@@ -3,6 +3,8 @@ param(
   [string]$apikey
 )
 
+Set-Location $PSScriptRoot
+
 if (!$source)
 {
 	$source = "https://nuget.org/"

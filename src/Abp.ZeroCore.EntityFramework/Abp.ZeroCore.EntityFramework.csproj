@@ -6,9 +6,9 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RootNamespace>Abp</RootNamespace>
     <AssemblyName>Abp.ZeroCore.EntityFramework</AssemblyName>
-    <PackageId>Abp.ZeroCore.EntityFramework</PackageId>
+    <PackageId>AbpLts.ZeroCore.EntityFramework</PackageId>
     <PackageTags>asp.net;asp.net mvc;boilerplate;application framework;web framework;framework;domain driven design;multitenancy;user management;role management;identity;entity framework</PackageTags>
-    <Description>Abp.ZeroCore.EntityFramework</Description>
+    <Description>AbpLts.ZeroCore.EntityFramework</Description>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Abp.EntityFramework\Abp.EntityFramework.csproj" />

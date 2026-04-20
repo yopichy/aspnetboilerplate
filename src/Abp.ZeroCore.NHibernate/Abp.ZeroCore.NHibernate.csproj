@@ -6,9 +6,9 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RootNamespace>Abp</RootNamespace>
     <AssemblyName>Abp.ZeroCore.NHibernate</AssemblyName>
-    <PackageId>Abp.ZeroCore.NHibernate</PackageId>
+    <PackageId>AbpLts.ZeroCore.NHibernate</PackageId>
     <PackageTags>asp.net;asp.net mvc;boilerplate;application framework;web framework;framework;domain driven design;multitenancy;user management;role management;identity;nhibernate;fluentmigrator</PackageTags>
-    <Description>Abp.ZeroCore.NHibernate</Description>
+    <Description>AbpLts.ZeroCore.NHibernate</Description>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Abp.FluentMigrator\Abp.FluentMigrator.csproj" />

@@ -5,7 +5,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Abp.ZeroCore.IdentityServer4.vNext.EntityFrameworkCore</AssemblyName>
-    <PackageId>Abp.ZeroCore.IdentityServer4.vNext.EntityFrameworkCore</PackageId>
+    <PackageId>AbpLts.ZeroCore.IdentityServer4.vNext.EntityFrameworkCore</PackageId>
     <PackageTags>asp.net;asp.net mvc;boilerplate;application framework;web framework;framework;domain driven design;multitenancy;user management;role management;identity server;entity framework</PackageTags>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
@@ -14,7 +14,7 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
     <RootNamespace>Abp</RootNamespace>
-    <Description>Abp.ZeroCore.IdentityServer4.vNext.EntityFrameworkCore</Description>
+    <Description>AbpLts.ZeroCore.IdentityServer4.vNext.EntityFrameworkCore</Description>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Abp.ZeroCore.EntityFrameworkCore\Abp.ZeroCore.EntityFrameworkCore.csproj" />

@@ -5,7 +5,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Abp.AspNetCore.OData</AssemblyName>
-    <PackageId>Abp.AspNetCore.OData</PackageId>
+    <PackageId>AbpLts.AspNetCore.OData</PackageId>
     <PackageTags>asp.net;asp.net mvc;boilerplate;application framework;web framework;framework;domain driven design;odata</PackageTags>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
@@ -15,7 +15,7 @@
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <RootNamespace>Abp</RootNamespace>
-    <Description>Abp.AspNetCore.OData</Description>
+    <Description>AbpLts.AspNetCore.OData</Description>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Abp\Abp.csproj" />
