@@ -7,6 +7,23 @@
 > ### Long Term Support Update
 > ASP.NET Boilerplate is no longer receiving new feature development, but it is maintained in an LTS mode for security patches only. See the original announcement at [read the end of life announcement](https://aspnetboilerplate.com/endofsupport?utm_source=referral&utm_medium=github&utm_campaign=github_zboilerplate_announcement_redirection).
 
+> ### Migrating from Abp to AbpLts
+> Migrating from the original `Abp` packages to `AbpLts` is straightforward. Simply replace all `Abp.*` package references in your `.csproj` files with the `AbpLts.*` equivalents and bump the version number:
+>
+> **Before:**
+> ```xml
+> <PackageReference Include="Abp.*" Version="10.3.0" />
+> ```
+>
+> **After:**
+> ```xml
+> <PackageReference Include="AbpLts.*" Version="10.5.0" />
+> ```
+>
+> The version is intentionally bumped from `10.3.0` to `10.5.0` to make the distinction between the original packages and the LTS fork clearly visible.
+>
+> **Versioning policy going forward:** The major version of `AbpLts` will follow the target .NET version. For example, when targeting .NET 11, the package version will be `AbpLts v11.x`.
+
 ## What is ABP?
 
 [ASP.NET Boilerplate](https://aspnetboilerplate.com) is a general purpose **application framework** specially designed for new modern web applications. It uses already **familiar tools** and implements **best practices** around them to provide you a **SOLID development experience**.
