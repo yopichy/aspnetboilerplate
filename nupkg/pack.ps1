@@ -12,6 +12,7 @@ $projects = (
     "Abp.AspNetCore.TestBase",
     "Abp.AspNetCore.PerRequestRedisCache",
     "Abp.AutoMapper",
+    "Abp.Mapperly",
     "Abp.BlobStoring",
     "Abp.BlobStoring.Azure",
     "Abp.BlobStoring.FileSystem",

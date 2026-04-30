@@ -24,6 +24,17 @@
 >
 > **Versioning policy going forward:** The major version of `AbpLts` will follow the target .NET version. For example, when targeting .NET 11, the package version will be `AbpLts v11.x`.
 
+> ### Migrating from AutoMapper to Mapperly
+> Starting from **AutoMapper v14**, the package moved to the [Reciprocal Public License 1.5 (RPL 1.5)](https://github.com/LuckyPennySoftware/AutoMapper/blob/main/LICENSE.md) under the LuckyPennySoftware organization. RPL 1.5 requires you to release the source code of any software that uses it, unless you purchase a commercial license — which restricts use in closed-source commercial applications. For projects concerned about this license change, we recommend migrating to **[AbpLts.Mapperly](src/Abp.Mapperly/README.md)** — a drop-in `IObjectMapper` implementation backed by [Mapperly](https://github.com/riok/mapperly), a fully open-source (Apache 2.0) compile-time source generator.
+>
+> Key benefits of Mapperly over AutoMapper:
+> - **Apache 2.0 license** — no commercial restrictions
+> - **Compile-time code generation** — no runtime reflection, faster performance
+> - **AoT and trimming safe**
+> - All code that injects `IObjectMapper` continues to work without changes
+>
+> See the **[Abp.Mapperly migration guide](src/Abp.Mapperly/README.md#migrating-from-abpautomapper)** for step-by-step instructions.
+
 ## What is ABP?
 
 [ASP.NET Boilerplate](https://aspnetboilerplate.com) is a general purpose **application framework** specially designed for new modern web applications. It uses already **familiar tools** and implements **best practices** around them to provide you a **SOLID development experience**.
@@ -62,6 +73,8 @@ See the <a href="https://aspnetboilerplate.com/Pages/Documents/NLayer-Architectu
 
 ASP.NET Boilerplate is distributed as NuGet packages.
 
+The new `AbpLts.Mapperly` package is published and available on nuget.org.
+
 |Package|Status|
 |:------|:-----:|
 |AbpLts|[![NuGet version](https://badge.fury.io/nu/AbpLts.svg)](https://badge.fury.io/nu/AbpLts)|
@@ -77,6 +90,7 @@ ASP.NET Boilerplate is distributed as NuGet packages.
 |AbpLts.AspNetCore|[![NuGet version](https://badge.fury.io/nu/AbpLts.AspNetCore.svg)](https://badge.fury.io/nu/AbpLts.AspNetCore)|
 |AbpLts.AspNetCore.SignalR|[![NuGet version](https://badge.fury.io/nu/AbpLts.AspNetCore.SignalR.svg)](https://badge.fury.io/nu/AbpLts.AspNetCore.SignalR)|
 |AbpLts.AutoMapper|[![NuGet version](https://badge.fury.io/nu/AbpLts.AutoMapper.svg)](https://badge.fury.io/nu/AbpLts.AutoMapper)|
+|AbpLts.Mapperly|[![NuGet version](https://badge.fury.io/nu/AbpLts.Mapperly.svg)](https://badge.fury.io/nu/AbpLts.Mapperly)|
 |AbpLts.HangFire|[![NuGet version](https://badge.fury.io/nu/AbpLts.HangFire.svg)](https://badge.fury.io/nu/AbpLts.HangFire)|
 |AbpLts.HangFire.AspNetCore|[![NuGet version](https://badge.fury.io/nu/AbpLts.HangFire.AspNetCore.svg)](https://badge.fury.io/nu/AbpLts.HangFire.AspNetCore)|
 |AbpLts.Castle.Log4Net|[![NuGet version](https://badge.fury.io/nu/AbpLts.Castle.Log4Net.svg)](https://badge.fury.io/nu/AbpLts.Castle.Log4Net)|
