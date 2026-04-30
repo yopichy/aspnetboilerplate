@@ -145,7 +145,7 @@ namespace Abp.Tests.Localization
             _resourceFileLocalizationSource.FindKeyOrNull("Merhaba!", new CultureInfo("tr")).ShouldBe("Hello");
         }
 
-        [Fact(Skip = "Waiting for https://github.com/aspnetboilerplate/aspnetboilerplate/issues/1995")]
+        [Fact(Skip = "Waiting for https://github.com/yopichy/aspnetboilerplate/issues/1995")]
         public void Test_GetAllStrings()
         {
             var allStrings = _resourceFileLocalizationSource.GetAllStrings(CultureInfo.GetCultureInfo("en"));

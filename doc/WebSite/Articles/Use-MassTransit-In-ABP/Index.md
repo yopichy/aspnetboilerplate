@@ -170,4 +170,4 @@ After all, run the `MassTransit.Publisher` app and `MassTransit.Web.Mvc` app. Th
 
 ## Source Code
 
-You can access the sample project on [https://github.com/aspnetboilerplate/aspnetboilerplate-samples/tree/master/MassTransitSample](https://github.com/aspnetboilerplate/aspnetboilerplate-samples/tree/master/MassTransitSample).
+You can access the sample project on [https://github.com/yopichy/aspnetboilerplate-samples/tree/master/MassTransitSample](https://github.com/yopichy/aspnetboilerplate-samples/tree/master/MassTransitSample).

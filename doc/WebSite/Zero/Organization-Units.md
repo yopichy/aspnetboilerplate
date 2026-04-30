@@ -66,7 +66,7 @@ time. It works for the **current tenant** by default.
 
 Here, we will see some common use cases for OUs. You can find the source code of
 the samples
-[here](https://github.com/aspnetboilerplate/aspnetboilerplate-samples/tree/master/OrganizationUnitsDemo).
+[here](https://github.com/yopichy/aspnetboilerplate-samples/tree/master/OrganizationUnitsDemo).
 
 #### Creating An Entity That Belongs To An Organization Unit
 

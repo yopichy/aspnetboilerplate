@@ -7,7 +7,7 @@
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
         <PackageProjectUrl>http://www.aspnetboilerplate.com/</PackageProjectUrl>
         <RepositoryType>git</RepositoryType>
-        <RepositoryUrl>https://github.com/aspnetboilerplate/aspnetboilerplate</RepositoryUrl>
+        <RepositoryUrl>https://github.com/yopichy/aspnetboilerplate</RepositoryUrl>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)' == 'Release' ">
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>

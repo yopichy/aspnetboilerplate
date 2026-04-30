@@ -120,18 +120,18 @@ Project/Solution [templates](/Templates) is a proper way of doing it.
 ASP.NET Boilerplate is an open source project developed on GitHub.
 
 -   Source code:
-    <https://github.com/aspnetboilerplate/aspnetboilerplate>
+    <https://github.com/yopichy/aspnetboilerplate>
 -   Project templates:
-    <https://github.com/aspnetboilerplate/aspnetboilerplate-templates>
+    <https://github.com/yopichy/aspnetboilerplate-templates>
 -   Sample projects:
-    <https://github.com/aspnetboilerplate/aspnetboilerplate-samples>
+    <https://github.com/yopichy/aspnetboilerplate-samples>
 -   Module Zero: <https://github.com/aspnetboilerplate/module-zero>
 
 ### Contributors
 
 ASP.NET Boilerplate is designed and developed by [Halil İbrahim
 Kalkan](http://www.halilibrahimkalkan.com/). There are also many
-[contributors](https://github.com/aspnetboilerplate/aspnetboilerplate/graphs/contributors)
+[contributors](https://github.com/yopichy/aspnetboilerplate/graphs/contributors)
 on GitHub. Please feel free to fork our repositories and send pull
 requests!
 
@@ -141,7 +141,7 @@ For your questions and other discussions, use [official
 forum](http://forum.aspnetboilerplate.com/).
 
 For feature requests or bug reports, use [GitHub
-issues](https://github.com/aspnetboilerplate/aspnetboilerplate/issues).
+issues](https://github.com/yopichy/aspnetboilerplate/issues).
 
 For personal contact with me, visit my [web
 page](http://halilibrahimkalkan.com/contact/).

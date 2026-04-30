@@ -86,7 +86,7 @@ Copy-Item -Path $templateFolderOverridedPath -Destination $templateFolderPath -R
 "{0}-CLONING ASP.NET BOILERPLATE-" -f [environment]::NewLine
 
 cd docfx_project\src
-git clone https://github.com/aspnetboilerplate/aspnetboilerplate.git
+git clone https://github.com/yopichy/aspnetboilerplate.git
 
 "-ASP.NET BOILERPLATE CLONED-{0}" -f [environment]::NewLine
 

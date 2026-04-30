@@ -259,7 +259,7 @@ public MyModel SanitizeHtml(MyModel myModel)
 }
 ```
 
-> More examples can be found in the [ASP.NET Core Demo](https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/test/aspnet-core-demo/AbpAspNetCoreDemo/Controllers/SanitizerTestController.cs):
+> More examples can be found in the [ASP.NET Core Demo](https://github.com/yopichy/aspnetboilerplate/blob/dev/test/aspnet-core-demo/AbpAspNetCoreDemo/Controllers/SanitizerTestController.cs):
 
 ##### HTML Sanitizer Middleware
 

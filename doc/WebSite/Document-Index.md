@@ -98,7 +98,7 @@ Releases
 
 - [Nuget Packages](Nuget-Packages.md)
 - [Nightly Builds](Nightly-Builds.md)
-- [Change Logs & Releases](https://github.com/aspnetboilerplate/aspnetboilerplate/releases)
+- [Change Logs & Releases](https://github.com/yopichy/aspnetboilerplate/releases)
 
 ### Module Zero
 

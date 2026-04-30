@@ -1,6 +1,6 @@
 ### What is the ASP.NET Boilerplate?
 
-ASP.NET Boilerplate (**ABP**) is an **[open source](https://github.com/aspnetboilerplate/aspnetboilerplate)** and well-documented **application framework**.
+ASP.NET Boilerplate (**ABP**) is an **[open source](https://github.com/yopichy/aspnetboilerplate)** and well-documented **application framework**.
 It's not just a framework, it also provides a strong **[architectural model](https://aspnetboilerplate.com/Pages/Documents/NLayer-Architecture)**
 based on **Domain Driven Design**, with all the **best practices** in mind.
 
@@ -143,6 +143,6 @@ There are many sample projects developed with the framework. See [the samples pa
 
 This is an open source project and open to contributions from the community.
 
-* Use [the GitHub repository](https://github.com/aspnetboilerplate/aspnetboilerplate) to access the latest **source code**, create [issues](https://github.com/aspnetboilerplate/aspnetboilerplate/issues) and send [pull requests](https://github.com/aspnetboilerplate/aspnetboilerplate/pulls).
+* Use [the GitHub repository](https://github.com/yopichy/aspnetboilerplate) to access the latest **source code**, create [issues](https://github.com/yopichy/aspnetboilerplate/issues) and send [pull requests](https://github.com/yopichy/aspnetboilerplate/pulls).
 * Use [aspnetboilerplate tag on stackoverflow](https://stackoverflow.com/questions/tagged/aspnetboilerplate) to ask questions about the usage.
 * Follow [aspboilerplate on twitter](https://twitter.com/aspboilerplate) to be informed about the happenings.

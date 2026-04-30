@@ -23,7 +23,7 @@ public class MyDynamicEntityPropertyDefinitionProvider : DynamicEntityPropertyDe
 }
 ```
 
-*InputType: A UI input type for the feature. This can be defined, and then used while creating an automatic feature screen. For example: [SingleLineStringInputType](https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/src/Abp/UI/Inputs/SingleLineStringInputType.cs), [ComboboxInputType](https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/src/Abp/UI/Inputs/ComboboxInputType.cs), [CheckboxInputType](https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/src/Abp/UI/Inputs/CheckboxInputType.cs)*
+*InputType: A UI input type for the feature. This can be defined, and then used while creating an automatic feature screen. For example: [SingleLineStringInputType](https://github.com/yopichy/aspnetboilerplate/blob/dev/src/Abp/UI/Inputs/SingleLineStringInputType.cs), [ComboboxInputType](https://github.com/yopichy/aspnetboilerplate/blob/dev/src/Abp/UI/Inputs/ComboboxInputType.cs), [CheckboxInputType](https://github.com/yopichy/aspnetboilerplate/blob/dev/src/Abp/UI/Inputs/CheckboxInputType.cs)*
 
 ```csharp
 public class DynamicEntityPropertyTestModule : AbpModule
@@ -86,7 +86,7 @@ dynamicPropertyManager.Add(cityProperty);
 
 
 
-You can use [**IDynamicPropertyManager**](https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/src/Abp/DynamicEntityProperties/IDynamicPropertyManager.cs) to manage dynamic property. (It uses cache)
+You can use [**IDynamicPropertyManager**](https://github.com/yopichy/aspnetboilerplate/blob/dev/src/Abp/DynamicEntityProperties/IDynamicPropertyManager.cs) to manage dynamic property. (It uses cache)
 
 ```csharp
 public interface IDynamicPropertyManager
@@ -157,7 +157,7 @@ _dynamicPropertyValueManager.Add(london);
 
 
 
-You can use [**IDynamicPropertyValueManager**](https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/src/Abp/DynamicEntityProperties/IDynamicPropertyValueManager.cs) to manage dynamic property values. (It checks permissions)
+You can use [**IDynamicPropertyValueManager**](https://github.com/yopichy/aspnetboilerplate/blob/dev/src/Abp/DynamicEntityProperties/IDynamicPropertyValueManager.cs) to manage dynamic property values. (It checks permissions)
 
 ```csharp
 public interface IDynamicPropertyValueManager
@@ -228,7 +228,7 @@ var cityDynamicPropertyOfCountry = _dynamicEntityPropertyManager.Add<Country>(ci
 
 
 
-You can use [**IDynamicEntityPropertyManager**](https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/src/Abp/DynamicEntityProperties/IDynamicEntityPropertyManager.cs) to manage entities dynamic properties. (It uses cache and checks required permissions.) See also: [DynamicEntityPropertyManagerExtensions](https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/src/Abp/DynamicEntityProperties/Extensions/DynamicEntityPropertyManagerExtensions.cs)
+You can use [**IDynamicEntityPropertyManager**](https://github.com/yopichy/aspnetboilerplate/blob/dev/src/Abp/DynamicEntityProperties/IDynamicEntityPropertyManager.cs) to manage entities dynamic properties. (It uses cache and checks required permissions.) See also: [DynamicEntityPropertyManagerExtensions](https://github.com/yopichy/aspnetboilerplate/blob/dev/src/Abp/DynamicEntityProperties/Extensions/DynamicEntityPropertyManagerExtensions.cs)
 
 ```csharp
 public interface IDynamicEntityPropertyManager
@@ -319,7 +319,7 @@ var cityValues = _dynamicEntityPropertyValueManager.GetValues<Country>(EntityId:
 
 
 
-You can use [**IDynamicEntityPropertyValueManager**](https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/src/Abp/DynamicEntityProperties/IDynamicEntityPropertyValueManager.cs) to manage entities dynamic properties. (It uses cache and checks required permissions.) See also: [DynamicEntityPropertyValueManagerExtensions](https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/src/Abp/DynamicEntityProperties/Extensions/DynamicEntityPropertyValueManagerExtensions.cs)
+You can use [**IDynamicEntityPropertyValueManager**](https://github.com/yopichy/aspnetboilerplate/blob/dev/src/Abp/DynamicEntityProperties/IDynamicEntityPropertyValueManager.cs) to manage entities dynamic properties. (It uses cache and checks required permissions.) See also: [DynamicEntityPropertyValueManagerExtensions](https://github.com/yopichy/aspnetboilerplate/blob/dev/src/Abp/DynamicEntityProperties/Extensions/DynamicEntityPropertyValueManagerExtensions.cs)
 
 ```csharp
 public interface IDynamicEntityPropertyValueManager

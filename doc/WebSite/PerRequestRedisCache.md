@@ -48,4 +48,4 @@ Configuration.Caching.UseRedis(usePerRequestRedisCache: true);
 
 This will replace `ICacheManager` with `IAbpPerRequestRedisCacheManager`. Your entire project will start working with `IAbpPerRequestRedisCacheManager`.
 
-[GitHub link](https://github.com/aspnetboilerplate/aspnetboilerplate/tree/dev/src/Abp.AspNetCore.PerRequestRedisCache)
+[GitHub link](https://github.com/yopichy/aspnetboilerplate/tree/dev/src/Abp.AspNetCore.PerRequestRedisCache)

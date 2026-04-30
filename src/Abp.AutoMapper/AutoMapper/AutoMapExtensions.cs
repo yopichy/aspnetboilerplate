@@ -20,7 +20,7 @@ public static class AutoMapExtensions
     /// </summary>
     /// <typeparam name="TDestination">Type of the destination object</typeparam>
     /// <param name="source">Source object</param>
-    [Obsolete("Automapper will remove static API, Please use ObjectMapper instead. See https://github.com/aspnetboilerplate/aspnetboilerplate/issues/4667")]
+    [Obsolete("Automapper will remove static API, Please use ObjectMapper instead. See https://github.com/yopichy/aspnetboilerplate/issues/4667")]
     public static TDestination MapTo<TDestination>(this object source)
     {
         return AbpEmulateAutoMapper.Mapper != null ? AbpEmulateAutoMapper.Mapper.Map<TDestination>(source) : default(TDestination);
@@ -35,7 +35,7 @@ public static class AutoMapExtensions
     /// <param name="source">Source object</param>
     /// <param name="destination">Destination object</param>
     /// <returns></returns>
-    [Obsolete("Automapper will remove static API, Please use ObjectMapper instead. See https://github.com/aspnetboilerplate/aspnetboilerplate/issues/4667")]
+    [Obsolete("Automapper will remove static API, Please use ObjectMapper instead. See https://github.com/yopichy/aspnetboilerplate/issues/4667")]
     public static TDestination MapTo<TSource, TDestination>(this TSource source, TDestination destination)
     {
         return AbpEmulateAutoMapper.Mapper != null ? AbpEmulateAutoMapper.Mapper.Map(source, destination) : default(TDestination);
