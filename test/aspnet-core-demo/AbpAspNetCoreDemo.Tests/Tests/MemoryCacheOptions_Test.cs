@@ -11,13 +11,13 @@ using Xunit;
 
 namespace AbpAspNetCoreDemo.IntegrationTests.Tests;
 
-public class MemoryCacheOptions_Test : IClassFixture<WebApplicationFactory<Startup>>
+public class MemoryCacheOptions_Test : IClassFixture<CustomWebApplicationFactory<Startup>>
 {
-    private readonly WebApplicationFactory<Startup> _applicationFactory;
+    private readonly CustomWebApplicationFactory<Startup> _applicationFactory;
 
     public MemoryCacheOptions_Test()
     {
-        _applicationFactory = new WebApplicationFactory<Startup>();
+        _applicationFactory = new CustomWebApplicationFactory<Startup>();
         _applicationFactory.CreateClient();
     }
 

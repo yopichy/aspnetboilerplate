@@ -12,12 +12,12 @@ using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace AbpAspNetCoreDemo.IntegrationTests.Tests;
 
-public class DateTimeFormatterControllerTests : IClassFixture<WebApplicationFactory<Startup>>
+public class DateTimeFormatterControllerTests : IClassFixture<CustomWebApplicationFactory<Startup>>
 {
-    private readonly WebApplicationFactory<Startup> _factory;
+    private readonly CustomWebApplicationFactory<Startup> _factory;
     private const string BaseUrl = "/api/date-time-format/";
 
-    public DateTimeFormatterControllerTests(WebApplicationFactory<Startup> factory)
+    public DateTimeFormatterControllerTests(CustomWebApplicationFactory<Startup> factory)
     {
         _factory = factory;
     }

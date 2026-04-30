@@ -27,4 +27,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <Target Name="CopyAbpPlugins" AfterTargets="Build">
+    <ItemGroup>
+      <AbpPluginFiles Include="$(MSBuildThisFileDirectory)..\AbpAspNetCoreDemo.PlugIn\bin\**\*.dll" />
+    </ItemGroup>
+    <Message Importance="high" Text="Copying ABP plugin DLLs to $(OutputPath)Plugins" />
+    <Copy SourceFiles="@(AbpPluginFiles)" DestinationFolder="$(OutputPath)Plugins\%(RecursiveDir)" SkipUnchangedFiles="true" />
+  </Target>
 </Project>

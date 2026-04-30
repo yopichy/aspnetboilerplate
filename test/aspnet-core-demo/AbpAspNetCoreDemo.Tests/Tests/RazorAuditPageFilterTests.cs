@@ -13,13 +13,12 @@ namespace AbpAspNetCoreDemo.IntegrationTests.Tests;
 
 public class RazorAuditPageFilterTests
 {
-    private readonly WebApplicationFactory<Startup> _factory;
-
+    private readonly CustomWebApplicationFactory<Startup> _factory;
     private IAuditingStore _auditingStore;
 
     public RazorAuditPageFilterTests()
     {
-        _factory = new WebApplicationFactory<Startup>();
+        _factory = new CustomWebApplicationFactory<Startup>();
 
         RegisterFakeAuditingStore();
     }
