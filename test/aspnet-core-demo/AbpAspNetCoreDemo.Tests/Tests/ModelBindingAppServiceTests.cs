@@ -17,11 +17,11 @@ namespace AbpAspNetCoreDemo.IntegrationTests.Tests;
 
 public class ModelBindingAppServiceTests
 {
-    private readonly WebApplicationFactory<Startup> _factory;
+    private readonly CustomWebApplicationFactory<Startup> _factory;
 
     public ModelBindingAppServiceTests()
     {
-        _factory = new WebApplicationFactory<Startup>();
+        _factory = new CustomWebApplicationFactory<Startup>();
     }
 
     [Theory]

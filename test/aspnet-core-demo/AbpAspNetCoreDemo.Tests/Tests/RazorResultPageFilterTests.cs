@@ -13,11 +13,11 @@ using Xunit;
 
 namespace AbpAspNetCoreDemo.IntegrationTests.Tests;
 
-public class RazorResultPageFilterTests : IClassFixture<WebApplicationFactory<Startup>>
+public class RazorResultPageFilterTests : IClassFixture<CustomWebApplicationFactory<Startup>>
 {
-    private readonly WebApplicationFactory<Startup> _factory;
+    private readonly CustomWebApplicationFactory<Startup> _factory;
 
-    public RazorResultPageFilterTests(WebApplicationFactory<Startup> factory)
+    public RazorResultPageFilterTests(CustomWebApplicationFactory<Startup> factory)
     {
         _factory = factory;
     }

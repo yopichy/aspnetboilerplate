@@ -17,13 +17,13 @@ namespace AbpAspNetCoreDemo.IntegrationTests.Tests;
 
 public class AbpODataEntityControllerTests
 {
-    private readonly WebApplicationFactory<Startup> _factory;
+    private readonly CustomWebApplicationFactory<Startup> _factory;
 
     private IPermissionChecker _permissionChecker;
 
     public AbpODataEntityControllerTests()
     {
-        _factory = new WebApplicationFactory<Startup>();
+        _factory = new CustomWebApplicationFactory<Startup>();
 
         RegisterFakePermissionChecker();
     }

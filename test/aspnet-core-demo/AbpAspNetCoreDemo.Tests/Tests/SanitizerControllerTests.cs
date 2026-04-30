@@ -13,12 +13,12 @@ using Xunit;
 
 namespace AbpAspNetCoreDemo.IntegrationTests.Tests;
 
-public class SanitizerControllerTests : IClassFixture<WebApplicationFactory<Startup>>
+public class SanitizerControllerTests : IClassFixture<CustomWebApplicationFactory<Startup>>
 {
-    private readonly WebApplicationFactory<Startup> _factory;
+    private readonly CustomWebApplicationFactory<Startup> _factory;
     private const string BaseUrl = "/SanitizerTest/";
 
-    public SanitizerControllerTests(WebApplicationFactory<Startup> factory)
+    public SanitizerControllerTests(CustomWebApplicationFactory<Startup> factory)
     {
         _factory = factory;
     }
