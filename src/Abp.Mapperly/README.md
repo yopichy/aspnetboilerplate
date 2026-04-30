@@ -167,7 +167,7 @@ public partial class UserMapper : IAbpMapper<User, UserDto>
 }
 ```
 
-#### 2. Custom `CreateMap<>` configuration → mapper method attributes
+#### 2. `Configurators.Add` with inline lambda
 
 **Before (AutoMapper):**
 
@@ -180,6 +180,8 @@ Configuration.Modules.AbpAutoMapper().Configurators.Add(config =>
 });
 ```
 
+Delete the entire `Configurators.Add(...)` call. Each `CreateMap<A, B>()` becomes its own `IAbpMapper<,>` class.
+
 **After (Mapperly):**
 
 ```csharp
@@ -189,12 +191,95 @@ public partial class UserMapper : IAbpMapper<User, UserDto>
     [MapperIgnoreTarget(nameof(UserDto.InternalNote))]
     public partial UserDto Map(User source);
 
-    // custom property mapping
+    // Mapperly detects this private method and uses it to populate FullName
     private string MapFullName(User source) => source.FirstName + " " + source.LastName;
+
+    public UserDto MapTo(User source, UserDto destination) { ... }
 }
 ```
 
-#### 3. `IObjectMapper.ProjectTo<T>()` → `IAbpMapperlyQueryableMapper<,>`
+#### 3. `Configurators.Add` with method reference
+
+**Before (AutoMapper):**
+
+```csharp
+// In PreInitialize():
+Configuration.Modules.AbpAutoMapper().Configurators.Add(CreateMappings);
+
+private void CreateMappings(IMapperConfigurationExpression cfg)
+{
+    cfg.CreateMap<User, UserDto>();
+    cfg.CreateMap<Role, RoleDto>();
+}
+```
+
+Delete both the `Configurators.Add(...)` call and the method. Each `CreateMap<A, B>()` line becomes its own mapper class.
+
+**After (Mapperly):**
+
+```csharp
+[Mapper]
+public partial class UserMapper : IAbpMapper<User, UserDto>
+{
+    public partial UserDto Map(User source);
+    public UserDto MapTo(User source, UserDto destination) { ... }
+}
+
+[Mapper]
+public partial class RoleMapper : IAbpMapper<Role, RoleDto>
+{
+    public partial RoleDto Map(Role source);
+    public RoleDto MapTo(Role source, RoleDto destination) { ... }
+}
+```
+
+`AbpMapperlyModule` auto-discovers all classes implementing `IAbpMapper<,>` — no registration needed.
+
+#### 4. `Configurators.Add` with AutoMapper `Profile` class
+
+**Before (AutoMapper):**
+
+```csharp
+Configuration.Modules.AbpAutoMapper().Configurators.Add(cfg => cfg.AddProfile<MyMappingProfile>());
+
+public class MyMappingProfile : Profile
+{
+    public MyMappingProfile()
+    {
+        CreateMap<User, UserDto>()
+            .ForMember(d => d.FullName, opt => opt.MapFrom(s => s.First + " " + s.Last))
+            .ForMember(d => d.Secret, opt => opt.Ignore());
+    }
+}
+```
+
+Delete the `Configurators.Add(...)` call and the `Profile` class entirely.
+
+**After (Mapperly):**
+
+```csharp
+[Mapper]
+public partial class UserMapper : IAbpMapper<User, UserDto>
+{
+    [MapperIgnoreTarget(nameof(UserDto.Secret))]
+    public partial UserDto Map(User source);
+
+    private string MapFullName(User source) => source.First + " " + source.Last;
+
+    public UserDto MapTo(User source, UserDto destination) { ... }
+}
+```
+
+### `.ForMember()` attribute equivalents
+
+| AutoMapper | Mapperly |
+|---|---|
+| `opt.Ignore()` | `[MapperIgnoreTarget(nameof(D.Prop))]` on `Map()` |
+| `opt.MapFrom(s => s.OtherProp)` | `[MapProperty(nameof(S.OtherProp), nameof(D.Prop))]` on `Map()` |
+| `opt.MapFrom(s => expr)` | Private method `private T MapPropName(Source s) => expr` |
+| `opt.Condition(s => ...)` | Not supported natively — implement `MapTo()` manually |
+
+#### 5. `IObjectMapper.ProjectTo<T>()` → `IAbpMapperlyQueryableMapper<,>`
 
 **Before:**
 
