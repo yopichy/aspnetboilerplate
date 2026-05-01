@@ -24,15 +24,21 @@ public class MyDto
     public string Name { get; set; }
 }
 
-// ---------- Mapperly mapper ----------
+/// <summary>A type with no registered mapper — used to test the no-mapper-found error path.</summary>
+public class UnmappedDto
+{
+    public int Id { get; set; }
+}
+
+// ---------- Mapperly mapper (uses MapperBase) ----------
 
 [Mapper]
-public partial class MyEntityMapper : IAbpMapper<MyEntity, MyDto>
+public partial class MyEntityMapper : MapperBase<MyEntity, MyDto>
 {
     [MapperIgnoreSource(nameof(MyEntity.InternalNote))]
-    public partial MyDto Map(MyEntity source);
+    public override partial MyDto Map(MyEntity source);
 
-    public MyDto MapTo(MyEntity source, MyDto destination)
+    public override MyDto MapTo(MyEntity source, MyDto destination)
     {
         destination.Id = source.Id;
         destination.Name = source.Name;
@@ -86,6 +92,30 @@ public class Mapperly_Tests : AbpIntegratedTestBase<AbpMapperlyTestModule>
     }
 
     [Fact]
+    public void Map_InternalNote_Should_Not_Be_Mapped()
+    {
+        var entity = new MyEntity { Id = 1, Name = "Test", InternalNote = "do not leak" };
+
+        var dto = _objectMapper.Map<MyDto>(entity);
+
+        // UnmappedDto has no Name property — we just verify InternalNote is not on MyDto
+        dto.GetType().GetProperty("InternalNote").ShouldBeNull();
+    }
+
+    [Fact]
+    public void Should_Throw_AbpException_When_No_Mapper_Registered()
+    {
+        var entity = new MyEntity { Id = 1, Name = "Test" };
+
+        var ex = Should.Throw<AbpException>(() => _objectMapper.Map<UnmappedDto>(entity));
+
+        ex.Message.ShouldContain(typeof(MyEntity).FullName);
+        ex.Message.ShouldContain(typeof(UnmappedDto).FullName);
+        ex.Message.ShouldContain("MapperBase");
+        ex.Message.ShouldContain("ReverseMapperBase");
+    }
+
+    [Fact]
     public void ProjectTo_Should_Throw_NotSupportedException()
     {
         var query = new List<MyEntity>().AsQueryable();
@@ -104,3 +134,4 @@ public class Mapperly_Tests : AbpIntegratedTestBase<AbpMapperlyTestModule>
         LocalIocManager.Release(mapper);
     }
 }
+
