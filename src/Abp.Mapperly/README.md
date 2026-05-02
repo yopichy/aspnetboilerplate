@@ -32,20 +32,20 @@ Register the module in your startup module:
 
 ### 1. Create a mapper class
 
-Create a `partial class` with Mapperly's `[Mapper]` attribute and implement `IAbpMapper<TSource, TDestination>`:
+Create a `partial class` with Mapperly's `[Mapper]` attribute and inherit from `MapperBase<TSource, TDestination>`:
 
 ```csharp
 using Riok.Mapperly.Abstractions;
 using Abp.Mapperly;
 
 [Mapper]
-public partial class UserMapper : IAbpMapper<User, UserDto>
+public partial class UserMapper : MapperBase<User, UserDto>
 {
-    public partial UserDto Map(User source);
+    public override partial UserDto Map(User source);
 
-    public UserDto MapTo(User source, UserDto destination)
+    public override UserDto MapTo(User source, UserDto destination)
     {
-        destination.Id = source.Id;
+        destination.Id   = source.Id;
         destination.Name = source.Name;
         return destination;
     }
@@ -74,7 +74,76 @@ public class UserAppService : ApplicationService
 }
 ```
 
-### 3. Inject the mapper directly (optional)
+### 3. Inherit from `MapperBase` (recommended)
+
+Use `MapperBase<TSource, TDestination>` as the base class instead of implementing `IAbpMapper<,>`
+directly. It provides empty default implementations for `BeforeMap` / `AfterMap` so you only
+override what you need:
+
+```csharp
+[Mapper]
+public partial class UserMapper : MapperBase<User, UserDto>
+{
+    public override partial UserDto Map(User source);
+
+    public override UserDto MapTo(User source, UserDto destination)
+    {
+        destination.Id   = source.Id;
+        destination.Name = source.Name;
+        return destination;
+    }
+
+    // Optional lifecycle hooks:
+    public override void BeforeMap(User source)
+    {
+        // e.g. validate, log, enrich source
+    }
+
+    public override void AfterMap(User source, UserDto destination)
+    {
+        // e.g. post-process destination
+    }
+}
+```
+
+### 4. Two-way mapping with `ReverseMapperBase`
+
+Use `ReverseMapperBase<TSource, TDestination>` to define both directions in a single class.
+`IObjectMapper.Map<UserDto>(user)` and `IObjectMapper.Map<User>(dto)` both work automatically:
+
+```csharp
+[Mapper]
+public partial class UserMapper : ReverseMapperBase<User, UserDto>
+{
+    // Forward: User → UserDto
+    public override partial UserDto Map(User source);
+
+    public override UserDto MapTo(User source, UserDto destination)
+    {
+        destination.Id   = source.Id;
+        destination.Name = source.Name;
+        return destination;
+    }
+
+    // Reverse: UserDto → User
+    public override partial User ReverseMap(UserDto destination);
+
+    public override void ReverseMapTo(UserDto destination, User source)
+    {
+        source.Id   = destination.Id;
+        source.Name = destination.Name;
+    }
+}
+```
+
+Now both of the following work:
+
+```csharp
+var dto  = _objectMapper.Map<UserDto>(user);  // forward
+var user = _objectMapper.Map<User>(dto);       // reverse — no extra mapper class needed
+```
+
+### 5. Inject the mapper directly (optional)
 
 ```csharp
 public class UserAppService : ApplicationService
@@ -88,18 +157,31 @@ public class UserAppService : ApplicationService
 }
 ```
 
-### 4. Queryable projection (opt-in replacement for `ProjectTo`)
+### 6. Collection mapping
+
+Collection types are mapped automatically when an element mapper is registered.
+No extra code required:
+
+```csharp
+List<User> users = ...;
+
+// Works out of the box — MapperlyObjectMapper iterates the list and maps each element:
+List<UserDto> dtos = _objectMapper.Map<List<UserDto>>(users);
+UserDto[]     arr  = _objectMapper.Map<UserDto[]>(users);
+```
+
+### 7. Queryable projection (opt-in replacement for `ProjectTo`)
 
 `IObjectMapper.ProjectTo<T>()` is not supported by Mapperly. Use `IAbpMapperlyQueryableMapper<TSource, TDest>` instead:
 
 ```csharp
 [Mapper]
-public partial class UserMapper : IAbpMapper<User, UserDto>,
+public partial class UserMapper : MapperBase<User, UserDto>,
                                   IAbpMapperlyQueryableMapper<User, UserDto>
 {
-    public partial UserDto Map(User source);
+    public override partial UserDto Map(User source);
 
-    public UserDto MapTo(User source, UserDto destination) { ... }
+    public override UserDto MapTo(User source, UserDto destination) { ... }
 
     public IQueryable<UserDto> ProjectTo(IQueryable<User> source)
         => source.Select(u => Map(u));

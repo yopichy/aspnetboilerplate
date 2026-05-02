@@ -18,8 +18,6 @@ public class AbpMapperlyModule : AbpModule
 
     public override void PreInitialize()
     {
-        IocManager.Register<IAbpMapperlyConfiguration, AbpMapperlyConfiguration>();
-
         Configuration.ReplaceService<ObjectMapping.IObjectMapper, MapperlyObjectMapper>();
     }
 
@@ -31,6 +29,7 @@ public class AbpMapperlyModule : AbpModule
     private void RegisterMappers()
     {
         var mapperInterface = typeof(IAbpMapper<,>);
+        var reverseMapperInterface = typeof(IAbpReverseMapper<,>);
         var queryableMapperInterface = typeof(IAbpMapperlyQueryableMapper<,>);
 
         var types = _typeFinder.Find(type =>
@@ -39,6 +38,7 @@ public class AbpMapperlyModule : AbpModule
             type.GetInterfaces().Any(i =>
                 i.IsGenericType &&
                 (i.GetGenericTypeDefinition() == mapperInterface ||
+                 i.GetGenericTypeDefinition() == reverseMapperInterface ||
                  i.GetGenericTypeDefinition() == queryableMapperInterface)
             )
         );
@@ -49,18 +49,26 @@ public class AbpMapperlyModule : AbpModule
         {
             Logger.Debug(type.FullName);
 
-            foreach (var iface in type.GetInterfaces().Where(i =>
-                i.IsGenericType &&
-                (i.GetGenericTypeDefinition() == mapperInterface ||
-                 i.GetGenericTypeDefinition() == queryableMapperInterface)))
+            // Collect all relevant interfaces this type implements that are not yet registered.
+            var ifacesToRegister = type.GetInterfaces()
+                .Where(i =>
+                    i.IsGenericType &&
+                    (i.GetGenericTypeDefinition() == mapperInterface ||
+                     i.GetGenericTypeDefinition() == reverseMapperInterface ||
+                     i.GetGenericTypeDefinition() == queryableMapperInterface))
+                .Where(i => !IocManager.IsRegistered(i))
+                .ToArray();
+
+            if (ifacesToRegister.Length == 0)
             {
-                if (!IocManager.IsRegistered(iface))
-                {
-                    IocManager.IocContainer.Register(
-                        Component.For(iface).ImplementedBy(type).LifestyleTransient()
-                    );
-                }
+                continue;
             }
+
+            // Register all relevant interfaces in a single Windsor component so that resolving
+            // any of them returns the same transient instance within a single call.
+            IocManager.IocContainer.Register(
+                Component.For(ifacesToRegister).ImplementedBy(type).LifestyleTransient()
+            );
         }
     }
 }
