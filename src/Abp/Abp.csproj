@@ -29,6 +29,8 @@
 	<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="10.0.2">
 		<PrivateAssets>all</PrivateAssets>
 	</PackageReference>
+    <PackageReference Include="NuGet.Packaging" Version="6.12.5" />
+    <PackageReference Include="NuGet.Protocol" Version="6.12.5" />
     <PackageReference Include="System.Text.Json" Version="10.0.3" />
     <PackageReference Include="JetBrains.Annotations" Version="2025.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
