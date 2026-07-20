@@ -26,5 +26,7 @@
 
     <ItemGroup>
       <PackageReference Include="HtmlSanitizer" Version="9.0.892" />
+      <PackageReference Include="AngleSharp" Version="1.5.2" />
     </ItemGroup>
+
 </Project>
