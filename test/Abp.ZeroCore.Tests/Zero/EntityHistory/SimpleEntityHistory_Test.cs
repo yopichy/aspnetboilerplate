@@ -438,6 +438,54 @@ public class SimpleEntityHistory_Test : AbpZeroTestBase
     }
 
     [Fact]
+    public void Should_Write_History_For_Owned_Entity_Of_Audited_Entities_Delete()
+    {
+        // Blog is the owner of BlogEx and has Audited attribute.
+        // Therefore, deleting BlogEx (by setting the owned navigation to null)
+        // should follow Blog and have entity history.
+
+        //Arrange
+        int blog1Id;
+        using (var uow = Resolve<IUnitOfWorkManager>().Begin())
+        {
+            // Owned entities are not available via DbContext -> DbSet,
+            var blog1 = _blogRepository.Single(b => b.Name == "test-blog-1");
+            blog1Id = blog1.Id;
+            blog1.More.ShouldNotBeNull();
+
+            blog1.More = null;
+            uow.Complete();
+        }
+
+        ;
+
+        //Assert
+        Predicate<EntityChangeSet> predicate = s =>
+        {
+            s.EntityChanges.Count.ShouldBe(1);
+
+            var entityChange = s.EntityChanges.Single(ec => ec.EntityTypeFullName == typeof(BlogEx).FullName);
+            entityChange.ChangeType.ShouldBe(EntityChangeType.Deleted);
+            // The primary key of BlogEx is a shadow property,
+            // EF Core is keeping the values of PK of Blog and PK of BlogEx the same
+            // See https://docs.microsoft.com/en-us/ef/core/modeling/owned-entities#implicit-keys
+            entityChange.EntityId.ShouldBe(blog1Id.ToJsonString());
+            entityChange.PropertyChanges.Count.ShouldBe(1);
+
+            var propertyChange =
+                entityChange.PropertyChanges.Single(pc => pc.PropertyName == nameof(BlogEx.BloggerName));
+            propertyChange.OriginalValue.ShouldBe("blogger-1".ToJsonString(false, false));
+            propertyChange.NewValue.ShouldBeNull();
+            propertyChange.PropertyTypeFullName.ShouldBe(typeof(BlogEx).GetProperty(nameof(BlogEx.BloggerName))
+                .PropertyType.FullName);
+
+            return true;
+        };
+
+        _entityHistoryStore.Received().Save(Arg.Is<EntityChangeSet>(s => predicate(s)));
+    }
+
+    [Fact]
     public void Should_Write_History_For_Owned_Entities_Of_Audited_Entities_Create()
     {
         // Blog is the owner of BlogPromotion and has Audited attribute.
