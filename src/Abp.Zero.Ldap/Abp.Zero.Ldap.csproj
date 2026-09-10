@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
   <Import Project="..\..\configureawait.props" />
@@ -24,8 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.DirectoryServices.AccountManagement" Version="10.0.3" />
-    <PackageReference Include="System.DirectoryServices.Protocols" Version="10.0.3" />
+    <PackageReference Include="System.DirectoryServices.AccountManagement" Version="10.0.12" />
+    <PackageReference Include="System.DirectoryServices.Protocols" Version="10.0.12" />
     <ProjectReference Include="..\Abp.Zero.Common\Abp.Zero.Common.csproj" />
   </ItemGroup>
 

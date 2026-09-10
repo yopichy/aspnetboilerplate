@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<Import Project="..\..\common.props" />
 	<Import Project="..\..\configureawait.props" />
@@ -26,7 +26,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Polly" Version="8.6.2" />
+		<PackageReference Include="Polly" Version="8.7.0" />
 	</ItemGroup>
 
 </Project>
