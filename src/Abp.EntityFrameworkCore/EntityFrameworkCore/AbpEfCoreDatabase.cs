@@ -47,12 +47,11 @@ public class AbpEfCoreDatabase : IDatabase
 #pragma warning disable EF9100
     public virtual Expression<Func<QueryContext, TResult>> CompileQueryExpression<TResult>(
         Expression query,
-        bool async,
-        IReadOnlySet<string> nonNullableReferenceTypeParameters)
+        bool async)
     {
         using (AbpEfCoreCurrentDbContext.BeginQueryCompilation(CurrentDbContext.Context as AbpDbContext, query))
         {
-            return InnerDatabase.CompileQueryExpression<TResult>(query, async, nonNullableReferenceTypeParameters);
+            return InnerDatabase.CompileQueryExpression<TResult>(query, async);
         }
     }
 #pragma warning restore EF9100
