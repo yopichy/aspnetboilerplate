@@ -16,6 +16,8 @@ public class AbpEfCoreConfiguration : IAbpEfCoreConfiguration
 
     public bool UseAbpQueryCompiler { get; set; } = false;
 
+    public bool EnableSoftDeleteCascade { get; set; } = false;
+
     public void AddDbContext<TDbContext>(Action<AbpDbContextConfiguration<TDbContext>> action)
         where TDbContext : DbContext
     {
